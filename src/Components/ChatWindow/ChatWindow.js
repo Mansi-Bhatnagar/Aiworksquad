@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import SenderMessage from "../SenderMessage/SenderMessage";
 import ReceiverMessage from "../ReceiverMessage/ReceiverMessage";
 import help from "../../Assets/phosphor-seal-question.svg";
@@ -21,7 +21,7 @@ const ChatWindow = (props) => {
       type: "S",
     },
   ];
-
+  const scrollableBodyRef = useRef(null);
   const [msgs, setMsgs] = useState(initialMsgs);
   const [inputMsg, setInputMsg] = useState("");
 
@@ -38,24 +38,33 @@ const ChatWindow = (props) => {
     }
   };
 
+  //For always scrolling to the bottom in chat window
+  useEffect(() => {
+    if (scrollableBodyRef) {
+      scrollableBodyRef.current.scrollTop =
+        scrollableBodyRef.current.scrollHeight;
+    }
+  }, [msgs]);
+
   return (
     <div className={classes.container}>
-      <div className={classes.introBox}>
-        <h2>Introduce yourself to AIWorkSquad</h2>
-        <div>
-          <p>Im Nithin. CEO of an IT startup company in India</p>
-          <img src={pen} alt="pen-icon" />
+      <div className={classes.scrollableWindow} ref={scrollableBodyRef}>
+        <div className={classes.introBox}>
+          <h2>Introduce yourself to AIWorkSquad</h2>
+          <div>
+            <p>Im Nithin. CEO of an IT startup company in India</p>
+            <img src={pen} alt="pen-icon" />
+          </div>
         </div>
+
+        {msgs.map((item, key) =>
+          item.type === "S" ? (
+            <SenderMessage msg={item.text} key={key} />
+          ) : (
+            <ReceiverMessage msg={item.text} key={key} />
+          )
+        )}
       </div>
-
-      {msgs.map((item, key) =>
-        item.type === "S" ? (
-          <SenderMessage msg={item.text} key={key} />
-        ) : (
-          <ReceiverMessage msg={item.text} key={key} />
-        )
-      )}
-
       <div className={classes.msgBar} onKeyDown={sendMsgHandler}>
         <img src={help} alt="help-icon" />
         <input

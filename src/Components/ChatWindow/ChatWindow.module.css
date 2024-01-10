@@ -1,8 +1,6 @@
 .container {
   margin-left: 260px;
-  max-width: 750px;
-  display: flex;
-  flex-direction: column;
+  max-width: 770px;
 }
 .msgBar {
   width: 684px;
@@ -105,7 +103,29 @@
 .caret:hover {
   cursor: pointer;
 }
+.scrollableWindow {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 282px);
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 4px;
+  }
+}
+.scrollableWindow:hover {
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #979dac61;
+    border-radius: 10px;
+  }
+}
 @media (max-width: 1060px) {
+  .scrollableWindow {
+    max-height: calc(100vh - 214px);
+  }
   .introBox {
     width: 600px;
   }
@@ -149,6 +169,13 @@
   .introBox {
     width: calc(100vw - 50px);
     margin: 14px auto;
+  }
+  .scrollableWindow {
+    max-height: calc(100vh - 182px);
+  }
+  .helpText {
+    margin-left: 0;
+    text-align: center;
   }
 }
 @media (max-width: 540px) {
