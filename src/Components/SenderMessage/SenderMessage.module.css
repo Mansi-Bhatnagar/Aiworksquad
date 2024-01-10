@@ -25,3 +25,27 @@
   height: 20px;
   margin-right: 24px;
 }
+.senderContainer img:hover {
+  cursor: pointer;
+}
+@media (max-width: 1060px) {
+  .senderContainer {
+    max-width: 514px;
+  }
+}
+@media (max-width: 865px) {
+  .senderContainer {
+    max-width: 414px;
+  }
+}
+@media (max-width: 540px) {
+  .senderContainer {
+    max-width: 300px;
+  }
+  .senderContainer img {
+    margin-right: 0;
+  }
+  .senderContainer p {
+    margin-left: 10px;
+  }
+}

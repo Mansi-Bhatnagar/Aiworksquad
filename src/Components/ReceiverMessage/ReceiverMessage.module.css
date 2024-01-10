@@ -40,3 +40,27 @@
   height: 20px;
   margin-right: 16px;
 }
+.receiverContainer img:hover {
+  cursor: pointer;
+}
+@media (max-width: 1060px) {
+  .receiverContainer {
+    max-width: 540px;
+  }
+}
+@media (max-width: 865px) {
+  .receiverContainer {
+    max-width: 440px;
+  }
+}
+@media (max-width: 540px) {
+  .receiverContainer {
+    max-width: 300px;
+  }
+  .receiverContainer div:first-child img {
+    margin-left: 0;
+  }
+  .receiverContainer div p {
+    margin-right: 10px;
+  }
+}

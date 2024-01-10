@@ -4,6 +4,7 @@ import ReceiverMessage from "../ReceiverMessage/ReceiverMessage";
 import help from "../../Assets/phosphor-seal-question.svg";
 import send from "../../Assets/phosphor-paper-plane-right.svg";
 import pen from "../../Assets/phosphor-pen.svg";
+import caret from "../../Assets/phosphor-caret-up.svg";
 import classes from "./ChatWindow.module.css";
 const ChatWindow = (props) => {
   const placeholderText = "Enter your " + props.department + " query here...";
@@ -69,6 +70,7 @@ const ChatWindow = (props) => {
         Type your next question above or select one from the related questions
         section
       </p>
+      <img src={caret} alt="caret-icon" className={classes.caret} />
     </div>
   );
 };

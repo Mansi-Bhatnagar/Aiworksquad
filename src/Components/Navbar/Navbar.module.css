@@ -81,3 +81,38 @@
 .dropdown select:hover {
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .logoContainer {
+    width: 150px;
+    height: 40px;
+  }
+  .logoContainer img {
+    width: 130px;
+    height: 32px;
+  }
+  .dropdown {
+    width: auto;
+    margin-right: 8px;
+  }
+  .user {
+    margin-right: 10px;
+  }
+}
+@media (max-width: 576px) {
+  .logoContainer {
+    width: 80px;
+    height: 30px;
+  }
+  .logoContainer img {
+    width: 80px;
+    height: 30px;
+    padding: 0;
+  }
+  .dropdown {
+    height: 30px;
+  }
+  .dropdown select {
+    margin: 0;
+    font-size: 10px;
+  }
+}

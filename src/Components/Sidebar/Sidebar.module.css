@@ -1,5 +1,8 @@
 .container {
   margin-top: 83px;
+  position: absolute;
+  top: 5px;
+  left: 0px;
 }
 .menuIcon {
   display: none;
@@ -123,14 +126,24 @@
   line-height: 20px;
   color: #171a1fff;
 }
-.container {
-  position: absolute;
-  top: 5px;
-  left: 0px;
+
+.moreOptions div:hover,
+.newChatBox:hover,
+.history:hover {
+  cursor: pointer;
 }
 @media (max-width: 768px) {
+  .content {
+    background-color: #fff;
+  }
   .menuIcon {
     display: block;
-    padding: 10px;
+    margin: 20px 0 0 10px;
+    background-color: #fff;
+    width: 25px;
+    height: 25px;
+  }
+  .container {
+    margin-top: 50px;
   }
 }
