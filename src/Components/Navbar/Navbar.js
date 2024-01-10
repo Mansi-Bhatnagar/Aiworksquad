@@ -2,10 +2,11 @@ import user from "../../Assets/phosphor-user-circle.svg";
 import logo from "../../Assets/logoBlack.png";
 import classes from "./Navbar.module.css";
 import { useState } from "react";
-const Navbar = () => {
+const Navbar = (props) => {
   const [department, setDepartment] = useState("marketing"); //Initial value = marketing
   const departmentHandler = (e) => {
     setDepartment(e.target.value);
+    props.getDepartment(e.target.value);
   };
   return (
     <div className={classes.container}>
